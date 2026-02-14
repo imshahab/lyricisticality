@@ -15,4 +15,3 @@ You search for a song, pick your favorite lyric lines, and it spits out a lyric 
 ## Some notes (aka excuses)
 
 - I used two APIs for this (LRCLIB for lyrics, iTunes for artwork). Is it the best approach? Nope. But they were free, and this whole thing is a poor man’s solution. 😄
-- It uses `html-to-image` from unpkg (version 1.11.11) to make the lyric card.

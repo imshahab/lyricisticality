@@ -2,26 +2,14 @@ const FALLBACK_COVER = "assets/images/default-cover.svg";
 const COVER_STORAGE_KEY = "coverArtUrl";
 
 const imgEl = document.querySelector("#album-art");
-const bgBlurEl = document.querySelector("#bg-blur");
 const trackNameEl = document.querySelector(".track-name");
 const trackArtistEl = document.querySelector(".track-artist");
 const lyricsEl = document.querySelector(".lyrics");
-const saveImageBtn = document.querySelector("#save-image-btn");
-const statusEl = document.querySelector("#card-status");
-const captureRoot = document.querySelector("#capture-root");
 const loadingOverlayEl = document.querySelector("#page-loading");
 const loadingPillEl = loadingOverlayEl?.querySelector(".loading-pill") || null;
 const pageContentEl = document.querySelector("#card-page-content");
 
 init();
-
-function setStatus(message) {
-  statusEl.textContent = message;
-}
-
-function setStatusLoading(isLoading) {
-  statusEl.classList.toggle("loading", isLoading);
-}
 
 function parseJsonStorage(key, fallbackValue) {
   const raw = localStorage.getItem(key);
@@ -43,13 +31,12 @@ function showPage() {
   pageContentEl.classList.remove("is-hidden");
 }
 
-function showLoadingOverlay(message, isDownloading = false) {
+function showLoadingOverlay(message) {
   if (!loadingOverlayEl) {
     return;
   }
 
   loadingOverlayEl.hidden = false;
-  loadingOverlayEl.classList.toggle("is-downloading", isDownloading);
 
   if (loadingPillEl && typeof message === "string" && message.trim()) {
     loadingPillEl.textContent = message;
@@ -61,24 +48,11 @@ function hideLoadingOverlay() {
     return;
   }
 
-  loadingOverlayEl.classList.remove("is-downloading");
   loadingOverlayEl.hidden = true;
 
   if (loadingPillEl) {
     loadingPillEl.textContent = "Loading lyric card...";
   }
-}
-
-function setCaptureBlurVisible(isVisible) {
-  if (!bgBlurEl) {
-    return;
-  }
-
-  bgBlurEl.style.display = isVisible ? "block" : "none";
-}
-
-function waitForNextFrame() {
-  return new Promise((resolve) => requestAnimationFrame(() => resolve()));
 }
 
 async function fetchJsonWithTimeout(url, timeoutMs = 7000) {
@@ -157,9 +131,6 @@ async function init() {
     typeof songInfo.trackName !== "string" ||
     typeof songInfo.artistName !== "string"
   ) {
-    setStatus("No song selected. Redirecting to search.");
-    setStatusLoading(false);
-    saveImageBtn.disabled = true;
     showPage();
     setTimeout(() => {
       window.location.href = "index.html";
@@ -176,9 +147,6 @@ async function init() {
     .filter(Boolean);
 
   if (lyricLines.length === 0) {
-    setStatus("No lyrics selected. Redirecting to selection.");
-    setStatusLoading(false);
-    saveImageBtn.disabled = true;
     showPage();
     setTimeout(() => {
       window.location.href = "lyrics-selection.html";
@@ -197,82 +165,18 @@ async function init() {
   });
   lyricsEl.appendChild(fragment);
 
-  setStatusLoading(true);
-  setStatus("Loading artwork...");
+  showLoadingOverlay("Loading artwork...");
 
   const coverArtUrl = await resolveCoverArt(trackName, artistName);
   imgEl.src = coverArtUrl;
-  bgBlurEl.style.backgroundImage = `url(${coverArtUrl})`;
   document.documentElement.style.setProperty(
     "--cover-art-url",
     `url("${coverArtUrl}")`,
   );
 
   await waitForAssets();
+  hideLoadingOverlay();
   showPage();
-  setStatusLoading(false);
-  setStatus("Ready to save.");
-
-  saveImageBtn.addEventListener("click", () =>
-    saveCardImage(trackName, artistName),
-  );
-}
-
-async function saveCardImage(trackName, artistName) {
-  if (!window.htmlToImage || typeof window.htmlToImage.toPng !== "function") {
-    setStatusLoading(false);
-    setStatus("Image export library failed to load. Refresh and try again.");
-    return;
-  }
-
-  saveImageBtn.disabled = true;
-  saveImageBtn.classList.add("loading");
-  saveImageBtn.textContent = "Preparing";
-  setStatusLoading(true);
-  setStatus("Preparing image...");
-  showLoadingOverlay("Downloading image...", true);
-
-  try {
-    setCaptureBlurVisible(true);
-    await waitForNextFrame();
-    await waitForAssets();
-
-    const dataUrl = await window.htmlToImage.toPng(captureRoot, {
-      cacheBust: true,
-      pixelRatio: Math.max(2, window.devicePixelRatio || 2),
-    });
-
-    const blob = await (await fetch(dataUrl)).blob();
-    const safeTrack = trackName.replace(/[^a-z0-9]+/gi, "-").toLowerCase();
-    const safeArtist = artistName.replace(/[^a-z0-9]+/gi, "-").toLowerCase();
-    const fileName = `${safeTrack || "track"}-${safeArtist || "artist"}.png`;
-
-    downloadBlob(blob, fileName, dataUrl);
-    setStatusLoading(false);
-    setStatus("Image saved.");
-  } catch {
-    setStatusLoading(false);
-    setStatus("Could not save image on this browser.");
-  } finally {
-    setCaptureBlurVisible(false);
-    hideLoadingOverlay();
-    saveImageBtn.disabled = false;
-    saveImageBtn.classList.remove("loading");
-    saveImageBtn.textContent = "Save image";
-  }
-}
-
-function downloadBlob(blob, fileName, dataUrl) {
-  const link = document.createElement("a");
-  const blobUrl = URL.createObjectURL(blob);
-  link.href = blobUrl;
-  link.download = fileName;
-  link.click();
-  URL.revokeObjectURL(blobUrl);
-
-  if (/iphone|ipad|ipod/i.test(navigator.userAgent)) {
-    window.open(dataUrl, "_blank");
-  }
 }
 
 async function waitForAssets() {

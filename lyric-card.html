@@ -27,34 +27,24 @@
       <div class="loading-pill">Loading lyric card...</div>
     </div>
     <div class="page is-hidden" id="card-page-content">
-      <div id="capture-root" class="capture-root">
-        <div id="bg-blur"></div>
-
-        <div class="card">
-          <div class="lyrics"></div>
-          <div class="song-info">
-            <img
-              id="album-art"
-              src=""
-              alt="Album Art"
-              width="44"
-              height="44"
-              crossorigin="anonymous"
-            />
-            <div class="track-meta">
-              <span class="track-name"></span>
-              <span class="track-artist"></span>
-            </div>
+      <div class="card">
+        <div class="lyrics"></div>
+        <div class="song-info">
+          <img
+            id="album-art"
+            src=""
+            alt="Album Art"
+            width="44"
+            height="44"
+            crossorigin="anonymous"
+          />
+          <div class="track-meta">
+            <span class="track-name"></span>
+            <span class="track-artist"></span>
           </div>
         </div>
       </div>
-      <p id="card-status" class="status" role="status" aria-live="polite"></p>
-      <button id="save-image-btn" class="save-btn">Save image</button>
     </div>
-    <script
-      src="https://unpkg.com/html-to-image@1.11.11/dist/html-to-image.js"
-      defer
-    ></script>
     <script src="assets/js/lyric-card.js" defer></script>
   </body>
 </html>
