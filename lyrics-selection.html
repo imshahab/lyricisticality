@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Choose up to five lyric lines for your lyric card."
+    />
+    <title>Lyricisticality</title>
+    <link rel="icon" href="assets/icons/fav.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" aria-labelledby="selection-title">
+      <h1 id="selection-title" class="app-title">Select lyric lines</h1>
+      <p id="song-meta" class="muted"></p>
+      <p
+        id="selection-status"
+        class="status"
+        role="status"
+        aria-live="polite"
+      ></p>
+      <form id="lyric-select" class="lyric-form"></form>
+      <p id="selection-error" class="error" role="alert" hidden></p>
+      <div class="actions">
+        <button id="generate" type="button">Generate Image</button>
+      </div>
+    </main>
+    <script src="assets/js/lyrics-selection.js" defer></script>
+  </body>
+</html>

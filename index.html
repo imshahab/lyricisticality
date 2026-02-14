@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Search songs, select lyrics, and generate shareable lyric cards."
+    />
+    <title>Lyricisticality</title>
+    <link rel="icon" href="assets/icons/fav.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" aria-labelledby="app-title">
+      <h1 id="app-title" class="app-title">Lyricisticality</h1>
+      <label class="field-label" for="search">Search for a song</label>
+      <input
+        type="text"
+        id="search"
+        placeholder="Search by track or artist"
+        autocomplete="off"
+      />
+      <p id="search-status" class="status" role="status" aria-live="polite"></p>
+      <div id="results" class="results" role="list"></div>
+    </main>
+    <script src="assets/js/index.js" defer></script>
+  </body>
+</html>
