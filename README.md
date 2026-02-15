@@ -7,9 +7,9 @@ You search for a song, pick your favorite lyric lines, and it spits out a lyric 
 ## Screenshots
 
 <div style="display: flex; gap: 12px;">
-	<img src="assets/screenshots/breaking-the-habit-linkin-park.png" alt="Breaking The Habit - Linkin Park" width="220"/>
-	<img src="assets/screenshots/infohazard-ninajirachi.png" alt="Infohazard - ninajirachi" width="220"/>
-	<img src="assets/screenshots/move-on-mike-posner.png" alt="Move On - Mike Posner" width="220"/>
+	<img src="assets/screenshots/breaking-the-habit.png" alt="Breaking The Habit - Linkin Park" width="220"/>
+	<img src="assets/screenshots/infohazard.png" alt="Infohazard - ninajirachi" width="220"/>
+	<img src="assets/screenshots/move-on.png" alt="Move On - Mike Posner" width="220"/>
 </div>
 
 ## Some notes (aka excuses)
