@@ -13,6 +13,10 @@ body.page-index {
 	background: #000;
 	color: rgba(255, 255, 255, 0.86);
 	font-family: 'Inter', sans-serif;
+	--grad-peach: #fbe0d5;
+	--grad-pink: #f7e2f1;
+	--grad-blue: #c6d6f8;
+	--grad-lime: #f2f3e1;
 }
 
 body.page-selection {
@@ -131,16 +135,20 @@ body.page-selection {
 	border-radius: 0.85rem;
 	border: 1px solid rgba(255, 255, 255, 0.16);
 	background: linear-gradient(
-		90deg,
-		rgba(255, 255, 255, 0.14) 0%,
-		rgba(255, 255, 255, 0.09) 100%
+		115deg,
+		rgba(251, 224, 213, 0.2) 0%,
+		rgba(247, 226, 241, 0.16) 34%,
+		rgba(198, 214, 248, 0.18) 68%,
+		rgba(242, 243, 225, 0.14) 100%
 	);
+	background-size: 220% 220%;
 	color: rgba(255, 255, 255, 0.88);
 	font-family: 'Inter', sans-serif;
 	font-size: 1rem;
 	padding: 0 1.15rem;
 	outline: none;
 	backdrop-filter: blur(2px);
+	animation: search-gradient-drift 16s ease-in-out infinite;
 }
 
 .hero-search:has(.results:not(:empty)) #search,
@@ -419,6 +427,24 @@ body.page-selection {
 @keyframes spin {
 	to {
 		transform: rotate(360deg);
+	}
+}
+
+@keyframes search-gradient-drift {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	body.page-index #search {
+		animation: none;
 	}
 }
 
