@@ -1,32 +1,90 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Choose up to five lyric lines for your lyric card."
-    />
-    <title>Lyricisticality</title>
-    <link rel="icon" href="assets/icons/fav.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-  </head>
-  <body>
-    <main class="app-shell" aria-labelledby="selection-title">
-      <h1 id="selection-title" class="app-title">Select lyric lines</h1>
-      <p id="song-meta" class="muted"></p>
-      <p
-        id="selection-status"
-        class="status"
-        role="status"
-        aria-live="polite"
-      ></p>
-      <form id="lyric-select" class="lyric-form"></form>
-      <p id="selection-error" class="error" role="alert" hidden></p>
-      <div class="actions">
-        <button id="generate" type="button">Generate Image</button>
-      </div>
-    </main>
-    <script src="assets/js/lyrics-selection.js" defer></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Choose up to five lyric lines for your lyric card."
+		/>
+		<title>Lyricisticality</title>
+		<link rel="icon" href="assets/icons/fav.svg" type="image/svg+xml" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="assets/css/styles.css" />
+	</head>
+	<body class="page-selection">
+		<button
+			type="button"
+			id="back-selection"
+			class="back-icon-btn"
+			aria-label="Go back"
+		>
+			<svg fill="#FFFFFF" width="24px" viewBox="0 0 24 24">
+				<g data-name="Layer 2">
+					<g data-name="arrow-ios-back">
+						<rect
+							width="24"
+							height="24"
+							transform="rotate(90 12 12)"
+							opacity="0"
+						/>
+
+						<path
+							d="M13.83 19a1 1 0 0 1-.78-.37l-4.83-6a1 1 0 0 1 0-1.27l5-6a1 1 0 0 1 1.54 1.28L10.29 12l4.32 5.36a1 1 0 0 1-.78 1.64z"
+						/>
+					</g>
+				</g>
+			</svg>
+		</button>
+		<main
+			class="app-shell app-shell-selection"
+			aria-labelledby="selection-title"
+		>
+			<h1 id="selection-title" class="sr-only">Select lyric lines</h1>
+
+			<a
+				class="github-link"
+				href="https://github.com/imshahab/lyricisticality"
+				target="_blank"
+				rel="noreferrer noopener"
+				aria-label="Star on GitHub"
+			>
+				<img src="assets/images/github.svg" alt="" aria-hidden="true" />
+				<span>Star on GitHub</span>
+			</a>
+
+			<section class="selection-shell" aria-label="Lyric line selection">
+				<header class="selection-header">
+					<h2 class="selection-title">Select lyric lines</h2>
+					<p id="song-meta" class="muted"></p>
+					<p
+						id="selection-status"
+						class="status"
+						role="status"
+						aria-live="polite"
+					></p>
+				</header>
+
+				<form id="lyric-select" class="lyric-form"></form>
+				<p id="selection-error" class="error" role="alert" hidden></p>
+
+				<div class="actions">
+					<button id="generate" type="button">Generate Image</button>
+				</div>
+			</section>
+
+			<div class="brand-lockup" aria-label="Lyricisticality version 0.1">
+				<img
+					src="assets/images/typelogo.svg"
+					alt="Lyricisticality v0.1"
+				/>
+			</div>
+		</main>
+		<script src="assets/js/lyrics-selection.js" defer></script>
+	</body>
 </html>

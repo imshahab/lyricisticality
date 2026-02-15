@@ -1,29 +1,68 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Search songs, select lyrics, and generate shareable lyric cards."
-    />
-    <title>Lyricisticality</title>
-    <link rel="icon" href="assets/icons/fav.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-  </head>
-  <body>
-    <main class="app-shell" aria-labelledby="app-title">
-      <h1 id="app-title" class="app-title">Lyricisticality</h1>
-      <label class="field-label" for="search">Search for a song</label>
-      <input
-        type="text"
-        id="search"
-        placeholder="Search by track or artist"
-        autocomplete="off"
-      />
-      <p id="search-status" class="status" role="status" aria-live="polite"></p>
-      <div id="results" class="results" role="list"></div>
-    </main>
-    <script src="assets/js/index.js" defer></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Search songs, select lyrics, and generate shareable lyric cards."
+		/>
+		<title>Lyricisticality</title>
+		<link rel="icon" href="assets/icons/fav.svg" type="image/svg+xml" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="assets/css/styles.css" />
+	</head>
+	<body class="page-index">
+		<main class="app-shell" aria-labelledby="app-title">
+			<h1 id="app-title" class="sr-only">Lyricisticality</h1>
+
+			<a
+				class="github-link"
+				href="https://github.com/imshahab/lyricisticality"
+				target="_blank"
+				rel="noreferrer noopener"
+				aria-label="Star on GitHub"
+			>
+				<img src="assets/images/github.svg" alt="" aria-hidden="true" />
+				<span>Star on GitHub</span>
+			</a>
+
+			<section class="hero-search" aria-label="Song search">
+				<img
+					class="quote-mark"
+					src="assets/images/quote.svg"
+					alt=""
+					aria-hidden="true"
+				/>
+
+				<label class="sr-only" for="search">Search for any song</label>
+				<input
+					type="text"
+					id="search"
+					placeholder="Search for any song..."
+					autocomplete="off"
+				/>
+				<p
+					id="search-status"
+					class="status"
+					role="status"
+					aria-live="polite"
+				></p>
+				<div id="results" class="results" role="list"></div>
+			</section>
+
+			<div class="brand-lockup" aria-label="Lyricisticality version 0.1">
+				<img
+					src="assets/images/typelogo.svg"
+					alt="Lyricisticality v0.1"
+				/>
+			</div>
+		</main>
+		<script src="assets/js/index.js" defer></script>
+	</body>
 </html>

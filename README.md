@@ -1,4 +1,4 @@
-# Lyricisticality
+<img src="assets/images/logo.png">
 
 This is a little web app I threw together because I wanted to share songs on Telegram (now that stories are free, finally!).
 
