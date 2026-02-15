@@ -1,50 +1,82 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Generate and save your lyric card image."
-    />
-    <title>Lyricisticality</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" href="assets/icons/fav.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
-  </head>
-  <body class="card-page">
-    <div
-      id="page-loading"
-      class="loading-screen"
-      role="status"
-      aria-live="polite"
-    >
-      <div class="loading-pill">Loading lyric card...</div>
-    </div>
-    <div class="page is-hidden" id="card-page-content">
-      <div class="card">
-        <div class="lyrics"></div>
-        <div class="song-info">
-          <img
-            id="album-art"
-            src=""
-            alt="Album Art"
-            width="44"
-            height="44"
-            crossorigin="anonymous"
-          />
-          <div class="track-meta">
-            <span class="track-name"></span>
-            <span class="track-artist"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="assets/js/lyric-card.js" defer></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Generate and save your lyric card image."
+		/>
+		<title>Lyricisticality</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" href="assets/icons/fav.svg" type="image/svg+xml" />
+		<link rel="stylesheet" href="assets/css/styles.css" />
+	</head>
+	<body class="card-page">
+		<div
+			id="page-loading"
+			class="loading-screen"
+			role="status"
+			aria-live="polite"
+		>
+			<div class="loading-pill">Loading lyric card...</div>
+		</div>
+		<button
+			type="button"
+			id="back-card"
+			class="back-icon-btn"
+			aria-label="Go back"
+		>
+			<svg fill="#FFFFFF" width="24px" viewBox="0 0 24 24">
+				<g data-name="Layer 2">
+					<g data-name="arrow-ios-back">
+						<rect
+							width="24"
+							height="24"
+							transform="rotate(90 12 12)"
+							opacity="0"
+						/>
+
+						<path
+							d="M13.83 19a1 1 0 0 1-.78-.37l-4.83-6a1 1 0 0 1 0-1.27l5-6a1 1 0 0 1 1.54 1.28L10.29 12l4.32 5.36a1 1 0 0 1-.78 1.64z"
+						/>
+					</g>
+				</g>
+			</svg>
+		</button>
+		<div class="page is-hidden" id="card-page-content">
+			<div class="card">
+				<div class="lyrics"></div>
+				<div class="song-info">
+					<img
+						id="album-art"
+						src=""
+						alt="Album Art"
+						width="44"
+						height="44"
+						crossorigin="anonymous"
+					/>
+					<div class="track-meta">
+						<span class="track-name"></span>
+						<span class="track-artist"></span>
+					</div>
+				</div>
+			</div>
+			<div class="card-actions">
+				<button type="button" id="download-card" class="save-btn">
+					Download image
+				</button>
+			</div>
+		</div>
+		<script
+			src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"
+			defer
+		></script>
+		<script src="assets/js/lyric-card.js" defer></script>
+	</body>
 </html>
