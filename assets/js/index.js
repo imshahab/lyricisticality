@@ -36,6 +36,7 @@ async function runSearch(term) {
 
 	controller = new AbortController();
 	setStatusLoading(true);
+	clearResults();
 	setStatus('Searching...');
 
 	try {
