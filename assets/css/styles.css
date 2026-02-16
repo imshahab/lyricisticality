@@ -260,10 +260,39 @@ body.page-selection {
 	transform: translateX(-50%);
 }
 
-.brand-lockup img {
-	width: min(10.8rem, 46vw);
-	height: auto;
-	display: block;
+.type-logo {
+	margin: 12px 0 0 0;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 22px;
+	line-height: 26px;
+	position: relative;
+	background:
+		radial-gradient(
+			106.26% 106.26% at 50% -6.26%,
+			rgba(251, 224, 213, 0.5) 0%,
+			rgba(247, 226, 241, 0.5) 30.29%,
+			rgba(198, 214, 248, 0.5) 60.1%,
+			rgba(242, 243, 225, 0.5) 100%
+		),
+		#ffffff;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-shadow: 0px 0px 1.28976px rgba(255, 255, 255, 0.48);
+}
+
+.version {
+	font-family: 'JetBrains Mono';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 12px;
+	line-height: 16px;
+	color: #888888;
+	position: absolute;
+	top: 0;
+	right: -24px;
 }
 
 .app-shell-selection {
