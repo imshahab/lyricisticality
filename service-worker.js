@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v2';
 const STATIC_CACHE_NAME = `lyricisticality-static-${CACHE_VERSION}`;
 
 const CORE_ASSETS = [
@@ -13,7 +13,9 @@ const CORE_ASSETS = [
 	'./assets/js/index.js',
 	'./assets/js/lyrics-selection.js',
 	'./assets/js/lyric-card.js',
-	'./assets/images/icon.svg',
+	'./assets/icons/apple-touch-icon.png',
+	'./assets/icons/icon-192.png',
+	'./assets/icons/icon-512.png',
 	'./assets/icons/fav.svg',
 	'./assets/images/quote.svg',
 	'./assets/images/typelogo.svg',
@@ -29,12 +31,13 @@ self.addEventListener('install', (event) => {
 			await Promise.all(
 				CORE_ASSETS.map(async (assetPath) => {
 					try {
-						const response = await fetch(assetPath, { cache: 'reload' });
+						const response = await fetch(assetPath, {
+							cache: 'reload',
+						});
 						if (response && response.ok) {
 							await cache.put(assetPath, response);
 						}
-					} catch {
-					}
+					} catch {}
 				}),
 			);
 
@@ -51,7 +54,9 @@ self.addEventListener('activate', (event) => {
 				(cacheName) => cacheName !== STATIC_CACHE_NAME,
 			);
 
-			await Promise.all(obsoleteCaches.map((cacheName) => caches.delete(cacheName)));
+			await Promise.all(
+				obsoleteCaches.map((cacheName) => caches.delete(cacheName)),
+			);
 			await self.clients.claim();
 		})(),
 	);
