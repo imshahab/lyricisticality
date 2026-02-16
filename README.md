@@ -4,6 +4,12 @@ This is a little web app I threw together because I wanted to share songs on Tel
 
 You search for a song, pick your favorite lyric lines, and it spits out a lyric card image you can post anywhere. It’s nothing fancy, but it works!
 
+## PWA support
+
+- Installable web app (manifest + service worker)
+- Offline support for core pages/assets once loaded
+- App icon source: `assets/images/icon.svg`
+
 ## Screenshots
 
 <div style="display: flex; gap: 12px;">
