@@ -1,9 +1,35 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 25.2.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="_x31_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 128 128" style="enable-background:new 0 0 128 128;" xml:space="preserve">
-<path style="fill:#546E7A;" d="M104.83,8.35l-67.47,9.81c-1.58,0.23-2.76,1.59-2.76,3.19v68.19c-5.33-0.63-11.21,2.79-14.63,6.38
-	c-6.43,6.75-7.55,16.14-2.48,20.97c5.06,4.83,14.39,3.26,20.82-3.49c2.75-2.89,5.31-7.72,5.71-12.34h0.07V41.65l54.28-7.89v48.02
-	c-5.37-0.73-11.34,2.72-14.8,6.36c-6.43,6.75-7.54,16.14-2.48,20.97c5.07,4.83,14.39,3.26,20.82-3.49c2.84-2.98,5.49-8.04,5.76-12.8
-	h0.02v-82C107.69,9.29,106.34,8.13,104.83,8.35z"/>
+<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.147348" y="0.147329" width="32.2947" height="32.2947" rx="7.69061" fill="url(#paint0_linear_21_32)"/>
+<rect x="0.147348" y="0.147329" width="32.2947" height="32.2947" rx="7.69061" stroke="#525252" stroke-width="0.294659"/>
+<g filter="url(#filter0_di_21_32)">
+<path d="M9.81743 16.2947L11.4623 18.1022L9.38362 20.0363C9.05826 20.3375 8.6847 20.693 8.26294 21.1027C7.84118 21.5004 7.47365 21.9643 7.16034 22.4945C6.84703 23.0127 6.69641 23.5851 6.70846 24.2117H5.89506C5.93121 23.7538 6.10594 23.32 6.41925 22.9103C6.74461 22.5006 7.25072 22.2957 7.93759 22.2957C8.4919 22.2957 9.02211 22.4463 9.52822 22.7476C10.0343 23.0368 10.4501 23.4345 10.7754 23.9406C11.1008 24.4467 11.2635 25.0311 11.2635 25.6939C11.2635 26.6338 10.9261 27.4351 10.2512 28.0979C9.57643 28.7607 8.7329 29.0921 7.72068 29.0921C6.76871 29.0921 5.93121 28.7547 5.2082 28.0798C4.49723 27.393 4.13572 26.3807 4.12367 25.0432C4.11162 24.1153 4.2743 23.2537 4.61171 22.4584C4.96117 21.651 5.39498 20.922 5.91314 20.2713C6.4313 19.6085 6.96151 19.018 7.50378 18.4999L9.81743 16.2947ZM18.4394 16.2947L20.0843 18.1022L18.0056 20.0363C17.6923 20.3375 17.3187 20.693 16.8849 21.1027C16.4632 21.5004 16.0956 21.9643 15.7823 22.4945C15.469 23.0127 15.3184 23.5851 15.3304 24.2117H14.517C14.5532 23.7538 14.7279 23.32 15.0412 22.9103C15.3666 22.5006 15.8727 22.2957 16.5596 22.2957C17.1139 22.2957 17.6441 22.4463 18.1502 22.7476C18.6563 23.0368 19.0721 23.4345 19.3974 23.9406C19.7228 24.4467 19.8854 25.0311 19.8854 25.6939C19.8854 26.6338 19.548 27.4351 18.8732 28.0979C18.1984 28.7607 17.3549 29.0921 16.3427 29.0921C15.3907 29.0921 14.5532 28.7547 13.8302 28.0798C13.1192 27.393 12.7577 26.3807 12.7457 25.0432C12.7457 24.1153 12.9144 23.2537 13.2518 22.4584C13.5892 21.651 14.017 20.922 14.5351 20.2713C15.0533 19.6085 15.5835 19.018 16.1258 18.4999L18.4394 16.2947Z" fill="url(#paint1_radial_21_32)"/>
+</g>
+<defs>
+<filter id="filter0_di_21_32" x="3.25003" y="15.4216" width="17.7072" height="14.5434" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="0.436508"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.4 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_21_32"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_21_32" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="0.25175"/>
+<feGaussianBlur stdDeviation="0.125875"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="shape" result="effect2_innerShadow_21_32"/>
+</filter>
+<linearGradient id="paint0_linear_21_32" x1="16.2947" y1="0.294659" x2="16.2947" y2="32.2947" gradientUnits="userSpaceOnUse">
+<stop stop-color="#242424"/>
+<stop offset="1" stop-color="#020202"/>
+</linearGradient>
+<radialGradient id="paint1_radial_21_32" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(12.1037 15.4934) rotate(90) scale(13.5987 16.9606)">
+<stop stop-color="#FBE0D5"/>
+<stop offset="0.302885" stop-color="#F7E2F1"/>
+<stop offset="0.600962" stop-color="#C6D6F8"/>
+<stop offset="1" stop-color="#F2F3E1"/>
+</radialGradient>
+</defs>
 </svg>
