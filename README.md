@@ -16,3 +16,8 @@ You search for a song, pick your favorite lyric lines, and it spits out a lyric 
 
 - I used two APIs for this (LRCLIB for lyrics, iTunes for artwork). Is it the best approach? Nope. But they were free, and this whole thing is a poor man’s solution. 😄
 - This app also uses [html2canvas](https://html2canvas.hertzen.com/) to generate lyric card images from HTML elements.
+- Safari on iOS doesn't support `CanvasRenderingContext2D.filter`, so the blurred background in the exported card would just... not blur. I used [context-filter-polyfill](https://github.com/davidenke/context-filter-polyfill) to fix that.
+
+## Thanks
+
+Shoutout to Claude Opus 4.6 and GPT-5.3 Codex for helping me build this thing. Couldn't have done it without you two. 🤖💖

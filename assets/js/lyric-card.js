@@ -141,6 +141,37 @@ function loadImageElement(src) {
 	});
 }
 
+function saveCanvasPrototype() {
+	const proto = CanvasRenderingContext2D.prototype;
+	const saved = {};
+
+	for (const key of Object.getOwnPropertyNames(proto)) {
+		saved[key] = Object.getOwnPropertyDescriptor(proto, key);
+	}
+
+	return saved;
+}
+
+function restoreCanvasPrototype(saved) {
+	const proto = CanvasRenderingContext2D.prototype;
+
+	for (const [key, descriptor] of Object.entries(saved)) {
+		try {
+			Object.defineProperty(proto, key, descriptor);
+		} catch {}
+	}
+}
+
+function loadScript(src) {
+	return new Promise((resolve, reject) => {
+		const script = document.createElement('script');
+		script.src = src;
+		script.onload = resolve;
+		script.onerror = () => reject(new Error(`Failed to load ${src}`));
+		document.head.appendChild(script);
+	});
+}
+
 async function generateBlurredBackgroundDataUrl(sourceUrl, width, height) {
 	const image = await loadImageElement(sourceUrl);
 	const multiplier = 2;
@@ -153,11 +184,25 @@ async function generateBlurredBackgroundDataUrl(sourceUrl, width, height) {
 		throw new Error('Canvas context unavailable');
 	}
 
+	// Save original canvas methods, load polyfill for ctx.filter support,
+	// then restore originals so html2canvas is not affected.
+	const savedProto = saveCanvasPrototype();
+
+	try {
+		await loadScript(
+			'https://cdn.jsdelivr.net/npm/context-filter-polyfill/dist/index.min.js',
+		);
+	} catch {}
+
 	ctx.filter = `blur(${36 * multiplier}px) saturate(1.3)`;
 	drawImageCover(ctx, image, canvas.width, canvas.height, 1.14);
 	ctx.filter = 'none';
 
-	return canvas.toDataURL('image/png');
+	const dataUrl = canvas.toDataURL('image/png');
+
+	restoreCanvasPrototype(savedProto);
+
+	return dataUrl;
 }
 
 async function createPreparedExportStage() {
